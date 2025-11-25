@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: rustup default 1.91.1
+      - run: rustup component add clippy rustfmt
+      - uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # ratchet:Swatinem/rust-cache@v2
+      - uses: taiki-e/install-action@ae532dedd825648efd18d9c49c9a443d0398ca0a # ratchet:taiki-e/install-action@cargo-make
+      - uses: taiki-e/install-action@b98f5bfc2edc235d74c94cb39bd9d8cdd69dbbdf # ratchet:taiki-e/install-action@cargo-deny
+      - run: cargo make -p ci fmt-check
+      - run: cargo make -p ci clippy
+      - run: cargo make -p ci deny-check
+      - run: cargo make -p ci docs
+  test:
+    services:
+      greenmail:
+        image: "greenmail/standalone:2.0.0"
+        env:
+          GREENMAIL_OPTS: "-Dgreenmail.smtp.port=3025 -Dgreenmail.imaps.port=3993 -Dgreenmail.hostname=0.0.0.0 -Dgreenmail.verbose"
+          JAVA_OPTS: "-Djava.net.preferIPv4Stack=true -Xmx512m"
+        options: --health-cmd "timeout 1s bash -c ':> /dev/tcp/0.0.0.0/8080' || exit 1" --health-interval 1s --health-retries 3
+        ports:
+          - 8020:8080
+          - 3025:3025
+          - 3993:3993
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: rustup default 1.91.1
+      - uses: Swatinem/rust-cache@9d47c6ad4b02e050fd481d890b2ea34778fd09d6 # ratchet:Swatinem/rust-cache@v2
+      - uses: taiki-e/install-action@ae532dedd825648efd18d9c49c9a443d0398ca0a # ratchet:taiki-e/install-action@cargo-make
+      - run: cargo make -p ci test
+
+  alls-green:
+    if: always()
+    runs-on: ubuntu-latest
+    needs:
+      - lint
+      - test
+    steps:
+      - run: ${{ !contains(needs.*.result, 'failure') }}

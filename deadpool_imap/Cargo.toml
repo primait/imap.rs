@@ -1,0 +1,30 @@
+[package]
+name = "deadpool_imap"
+description = "A deadpool implementation for IMAP connections. Uses `imap_session` as a backend"
+readme = "./README.md"
+keywords.workspace = true
+categories.workspace = true
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+homepage.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+deadpool = "0.12.3"
+imap_session = { path = "../imap_session" }
+tracing = { workspace = true }
+async-native-tls = { workspace = true }
+
+[dev-dependencies]
+config = "0.15.19"
+fake = { workspace = true }
+lettre = { version = "0.11.19", features = ["tokio1", "tokio1-native-tls"] }
+rand = { workspace = true }
+reqwest = { version = "0.12.24", features = ["json"] }
+serde = { workspace = true, features = ["derive", "rc"] }
+tokio = { workspace = true, features = ["full"] }
+test-context = "0.5.4"
+url = "2.5.7"
