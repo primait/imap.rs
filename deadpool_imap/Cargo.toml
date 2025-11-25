@@ -14,7 +14,7 @@ repository.workspace = true
 
 [dependencies]
 deadpool = "0.12.3"
-imap_session = "0.1.0"
+imap_session = "0.2.0"
 tracing = { workspace = true }
 async-native-tls = { workspace = true }
 
