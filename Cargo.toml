@@ -1,0 +1,32 @@
+[workspace]
+resolver = "3"
+members = ["deadpool_imap", "imap_session"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+keywords = ["imap", "email", "network", "deadpool", "pool"]
+categories = ["email", "network-programming"]
+authors = ["Victor Martínez Montané <jaster.victor@gmail.com>"]
+rust-version = "1.90"
+homepage = "https://github.com/primait/imap.rs"
+repository = "https://github.com/primait/imap.rs"
+license = "MIT"
+
+[workspace.dependencies]
+async-native-tls = { version = "0.5.0", default-features = false, features = [
+  "tokio",
+  "runtime-tokio",
+  "futures-util",
+] }
+fake = { version = "4.4.0", features = [
+  "chrono",
+  "derive",
+  "serde_json",
+  "uuid",
+] }
+rand = "0.9.2"
+serde = { version = "1.0.228" }
+thiserror = "2"
+tokio = { version = "1.48.0" }
+tracing = "0.1.41"

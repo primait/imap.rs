@@ -1,0 +1,17 @@
+services:
+  greenmail:
+    image: "greenmail/standalone:2.0.0"
+    ports:
+      - 8020:8080
+      - 3025:3025
+      - 3993:3993
+    environment:
+      GREENMAIL_OPTS: "-Dgreenmail.smtp.port=3025 -Dgreenmail.imaps.port=3993 -Dgreenmail.hostname=0.0.0.0 -Dgreenmail.verbose"
+      JAVA_OPTS: "-Djava.net.preferIPv4Stack=true -Xmx512m"
+    healthcheck:
+      test: timeout 1s bash -c ':> /dev/tcp/127.0.0.1/8020' || exit 1
+      interval: 1s
+      retries: 3
+
+volumes:
+  artifacts:
