@@ -1,0 +1,30 @@
+[package]
+name = "imap_session"
+description = "A wrapper around async_imap offering a simpler way to deal with common IMAP operations"
+readme = "./README.md"
+keywords.workspace = true
+categories.workspace = true
+rust-version.workspace = true
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+homepage.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+async-imap = { version = "0.11.1", default-features = false, features = [
+  "tokio",
+  "runtime-tokio",
+] }
+async-native-tls = { workspace = true }
+chrono = { version = "0.4.42", features = ["serde"] }
+derive_more = { version = "2.0.1", features = ["display", "from", "from_str"] }
+futures-util = "0.3.31"
+serde_with = "3.16.0"
+thiserror = { workspace = true }
+tokio = { workspace = true, features = ["net"] }
+tracing = { workspace = true }
+serde = { workspace = true, features = ["derive", "rc"] }
+
+[dev-dependencies]
