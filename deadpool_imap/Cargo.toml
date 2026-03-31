@@ -27,4 +27,4 @@ reqwest = { version = "0.12.25", features = ["json"] }
 serde = { workspace = true, features = ["derive", "rc"] }
 tokio = { workspace = true, features = ["full"] }
 test-context = "0.5.4"
-url = "2.5.7"
+url = "2.5.8"
