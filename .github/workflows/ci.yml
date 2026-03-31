@@ -45,6 +45,7 @@ jobs:
       - run: rustup default 1.91.1
       - uses: Swatinem/rust-cache@779680da715d629ac1d338a641029a2f4372abb5 # ratchet:Swatinem/rust-cache@v2
       - uses: taiki-e/install-action@d4f20a6c2958cd503607a18b0add7118e4fff87d # ratchet:taiki-e/install-action@cargo-make
+      - uses: taiki-e/install-action@b2c7b1a8b6e28f1ac1f669fd28ceba5cda1fb1a3 # ratchet:taiki-e/install-action@nextest
       - run: cargo make -p ci test
 
   alls-green:
