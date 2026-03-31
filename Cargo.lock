@@ -529,13 +529,13 @@ checksum = "092966b41edc516079bdf31ec78a2e0588d1d0c08f78b91d8307215928642b2b"
 
 [[package]]
 name = "deadpool_imap"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "async-native-tls",
  "config",
  "deadpool",
  "fake",
- "imap_session 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "imap_session 0.1.0",
  "lettre",
  "rand",
  "reqwest",
@@ -1265,6 +1265,8 @@ dependencies = [
 [[package]]
 name = "imap_session"
 version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "67f3e2fd34da1044785fbbc0cc04e9d1be39ec616b20c20685bfce6511770111"
 dependencies = [
  "async-imap",
  "async-native-tls",
@@ -1280,9 +1282,7 @@ dependencies = [
 
 [[package]]
 name = "imap_session"
-version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "67f3e2fd34da1044785fbbc0cc04e9d1be39ec616b20c20685bfce6511770111"
+version = "0.1.1"
 dependencies = [
  "async-imap",
  "async-native-tls",
