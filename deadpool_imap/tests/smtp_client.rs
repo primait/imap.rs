@@ -29,7 +29,10 @@ pub struct SendEmailCommand {
 pub struct SendEmailCommandFaker(pub String);
 
 impl fake::Dummy<SendEmailCommandFaker> for SendEmailCommand {
-    fn dummy_with_rng<R: fake::rand::Rng + ?Sized>(config: &SendEmailCommandFaker, _rng: &mut R) -> Self {
+    fn dummy_with_rng<R: fake::rand::Rng + ?Sized>(
+        config: &SendEmailCommandFaker,
+        _rng: &mut R,
+    ) -> Self {
         Self {
             to: config.0.clone(),
             body: Sentence(10..20).fake(),
