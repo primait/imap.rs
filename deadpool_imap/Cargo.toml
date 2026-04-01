@@ -19,7 +19,7 @@ tracing = { workspace = true }
 async-native-tls = { workspace = true }
 
 [dev-dependencies]
-config = "0.15.19"
+config = "0.15.22"
 fake = { workspace = true }
 lettre = { version = "0.11.19", features = ["tokio1", "tokio1-native-tls"] }
 rand = { workspace = true }
