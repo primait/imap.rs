@@ -14,7 +14,7 @@ repository = "https://github.com/primait/imap.rs"
 license = "MIT"
 
 [workspace.dependencies]
-async-native-tls = { version = "0.5.0", default-features = false, features = [
+async-native-tls = { version = "0.6.0", default-features = false, features = [
   "tokio",
   "runtime-tokio",
   "futures-util",

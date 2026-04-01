@@ -90,13 +90,13 @@ dependencies = [
 
 [[package]]
 name = "async-native-tls"
-version = "0.5.0"
+version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9343dc5acf07e79ff82d0c37899f079db3534d99f189a1837c8e549c99405bec"
+checksum = "37dd6b179962fe4048a6f81d4c0d7ed419a21fdf49204b4c6b04971693358e79"
 dependencies = [
  "futures-util",
  "native-tls",
- "thiserror 1.0.69",
+ "thiserror 2.0.18",
  "tokio",
  "url",
 ]
@@ -522,7 +522,7 @@ dependencies = [
  "config",
  "deadpool",
  "fake",
- "imap_session 0.1.0",
+ "imap_session",
  "lettre",
  "reqwest",
  "serde",
@@ -1267,24 +1267,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ba1f9b30846c3d04371159ef3a0413ce7c1ae0a8c619cd255c60b3d902553f22"
 dependencies = [
  "nom 7.1.3",
-]
-
-[[package]]
-name = "imap_session"
-version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "67f3e2fd34da1044785fbbc0cc04e9d1be39ec616b20c20685bfce6511770111"
-dependencies = [
- "async-imap",
- "async-native-tls",
- "chrono",
- "derive_more",
- "futures-util",
- "serde",
- "serde_with",
- "thiserror 2.0.18",
- "tokio",
- "tracing",
 ]
 
 [[package]]
