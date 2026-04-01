@@ -96,6 +96,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "async-native-tls"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "37dd6b179962fe4048a6f81d4c0d7ed419a21fdf49204b4c6b04971693358e79"
+dependencies = [
+ "futures-util",
+ "native-tls",
+ "thiserror 2.0.18",
+ "tokio",
+ "url",
+]
+
+[[package]]
 name = "async-trait"
 version = "0.1.89"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -492,7 +505,7 @@ checksum = "2657f61fb1dd8bf37a8d51093cc7cee4e77125b22f7753f49b289f831bec2bae"
 name = "deadpool_imap"
 version = "0.1.1"
 dependencies = [
- "async-native-tls",
+ "async-native-tls 0.6.0",
  "config",
  "deadpool",
  "fake",
@@ -1225,7 +1238,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "67f3e2fd34da1044785fbbc0cc04e9d1be39ec616b20c20685bfce6511770111"
 dependencies = [
  "async-imap",
- "async-native-tls",
+ "async-native-tls 0.5.0",
  "chrono",
  "derive_more",
  "futures-util",
@@ -1241,7 +1254,7 @@ name = "imap_session"
 version = "0.1.1"
 dependencies = [
  "async-imap",
- "async-native-tls",
+ "async-native-tls 0.6.0",
  "chrono",
  "derive_more",
  "futures-util",
