@@ -13,7 +13,7 @@ license.workspace = true
 repository.workspace = true
 
 [dependencies]
-deadpool = "0.12.3"
+deadpool = "0.13.0"
 imap_session = "0.1.0"
 tracing = { workspace = true }
 async-native-tls = { workspace = true }
