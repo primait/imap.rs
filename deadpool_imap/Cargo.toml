@@ -26,5 +26,5 @@ rand = { workspace = true }
 reqwest = { version = "0.13.2", features = ["json"] }
 serde = { workspace = true, features = ["derive", "rc"] }
 tokio = { workspace = true, features = ["full"] }
-test-context = "0.5.4"
+test-context = "0.5.5"
 url = "2.5.8"
