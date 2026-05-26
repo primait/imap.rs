@@ -22,7 +22,7 @@ async-native-tls = { workspace = true }
 config = "0.15.23"
 fake = { workspace = true }
 lettre = { version = "0.11.22", features = ["tokio1", "tokio1-native-tls"] }
-reqwest = { version = "0.13.3", features = ["json"] }
+reqwest = { version = "0.13.4", features = ["json"] }
 serde = { workspace = true, features = ["derive", "rc"] }
 tokio = { workspace = true, features = ["full"] }
 test-context = "0.5.8"
