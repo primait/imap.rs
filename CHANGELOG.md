@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## `deadpool_imap` - [0.1.3](https://github.com/primait/imap.rs/compare/deadpool_imap-v0.1.2...deadpool_imap-v0.1.3) - 2026-06-29
+
+### Other
+- *(deps)* bump config from 0.15.22 to 0.15.23 ([#71](https://github.com/primait/imap.rs/pull/71))
+- *(deps)* bump reqwest from 0.13.2 to 0.13.3 ([#64](https://github.com/primait/imap.rs/pull/64))
+- *(deps)* bump lettre from 0.11.20 to 0.11.22 ([#70](https://github.com/primait/imap.rs/pull/70))
+- *(deps)* bump test-context from 0.5.5 to 0.5.8 ([#63](https://github.com/primait/imap.rs/pull/63))
+
+## `imap_session` - [0.1.3](https://github.com/primait/imap.rs/compare/imap_session-v0.1.2...imap_session-v0.1.3) - 2026-06-29
+
+### Other
+- *(deps)* bump serde_with from 3.18.0 to 3.20.0 ([#68](https://github.com/primait/imap.rs/pull/68))
+
 ## `deadpool_imap` - [0.1.2](https://github.com/primait/imap.rs/compare/deadpool_imap-v0.1.1...deadpool_imap-v0.1.2) - 2026-04-01
 
 ### Other
