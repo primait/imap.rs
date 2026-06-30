@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "imap.rs"
+  description: "Asynchronous IMAP Client and Connection Pool"
+spec:
+  type: "library"
+  lifecycle: production
+  owner: "group:default/team-policy-operations-spain"
+  system: prima.it
