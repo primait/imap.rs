@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "imap.rs"
+  description: "Crates for IMAP."
+spec:
+  type: library
+  lifecycle: production
+  owner: policy-operations-spain
+  system: prima.it
