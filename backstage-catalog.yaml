@@ -1,10 +1,48 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: "imap.rs"
-  description: "Crates for IMAP."
+  name: imap_session
+  description: A wrapper around async_imap offering a simpler way to deal with common IMAP operations.
+  tags:
+    - rust
+    - imap
+    - email
+  annotations:
+    backstage.io/source-location: url:https://github.com/primait/imap.rs/tree/master/imap_session/
+  links:
+    - url: https://crates.io/crates/imap_session
+      title: crates.io
+    - url: https://docs.rs/imap_session
+      title: docs.rs
+      icon: docs
 spec:
   type: library
   lifecycle: production
-  owner: policy-operations-spain
+  owner: group:default/team-policy-operations-spain
   system: prima.it
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: deadpool_imap
+  description: A deadpool implementation for IMAP connections, using imap_session as a backend.
+  tags:
+    - rust
+    - imap
+    - email
+    - connection-pool
+  annotations:
+    backstage.io/source-location: url:https://github.com/primait/imap.rs/tree/master/deadpool_imap/
+  links:
+    - url: https://crates.io/crates/deadpool_imap
+      title: crates.io
+    - url: https://docs.rs/deadpool_imap
+      title: docs.rs
+      icon: docs
+spec:
+  type: library
+  lifecycle: production
+  owner: group:default/team-policy-operations-spain
+  system: prima.it
+  dependsOn:
+    - component:default/imap_session
