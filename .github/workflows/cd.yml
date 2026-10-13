@@ -20,7 +20,7 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - run: rustup default 1.91.1
+      - run: rustup default 1.99.0
       - name: Run release-plz
         uses: release-plz/action@f393a7b38aca9d9b4c58447b291dbac963901df6 # v0.5.141
         with:
@@ -41,7 +41,7 @@ jobs:
       cancel-in-progress: false
     steps:
       - *checkout
-      - run: rustup default 1.91.1
+      - run: rustup default 1.99.0
       - name: Run release-plz
         uses: release-plz/action@f393a7b38aca9d9b4c58447b291dbac963901df6 # v0.5.141
         with:
