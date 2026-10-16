@@ -37,7 +37,7 @@ args = ["fmt", "--all", "--", "--check"]
 [tasks.deny-check]
 description = "Runs the cargo deny plugin during CI."
 command = "cargo"
-args = ["deny", "check"]
+args = ["deny", "check", "bans"]
 
 [tasks.test]
 description = "Runs tests."
