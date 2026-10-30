@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## `imap_session` - [0.1.4](https://github.com/primait/imap.rs/compare/imap_session-v0.1.3...imap_session-v0.1.4) - 2026-10-30
+
+### Other
+- *(deps)* bump async-imap from 0.11.2 to 0.12.0 ([#94](https://github.com/primait/imap.rs/pull/94))
+
 ## `deadpool_imap` - [0.1.3](https://github.com/primait/imap.rs/compare/deadpool_imap-v0.1.2...deadpool_imap-v0.1.3) - 2026-10-13
 
 ### Other
